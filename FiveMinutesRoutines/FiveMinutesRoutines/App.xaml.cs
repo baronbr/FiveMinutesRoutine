@@ -30,6 +30,14 @@ namespace FiveMinutesRoutines
         {
             containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
+            containerRegistry.RegisterForNavigation<Home, HomeViewModel>();
+
+            containerRegistry.RegisterForNavigation<Breathing, BreathingViewModel>();
+            containerRegistry.RegisterForNavigation<Streatching, StreatchingViewModel>();
+            containerRegistry.RegisterForNavigation<Water, WaterViewModel>();
+            containerRegistry.RegisterForNavigation<Login, LoginViewModel>();
+            containerRegistry.RegisterForNavigation<SignUp, SignUpViewModel>();
+            containerRegistry.RegisterForNavigation<Settings, SettingsViewModel>();
         }
     }
 }

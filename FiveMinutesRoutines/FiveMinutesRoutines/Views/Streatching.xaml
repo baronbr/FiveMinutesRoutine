@@ -1,8 +1,63 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:prism="http://prismlibrary.com"
-             prism:ViewModelLocator.AutowireViewModel="True"
-             x:Class="FiveMinutesRoutines.Views.Streatching">
+             xmlns:prism="http://prismlibrary.com" xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms" prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="FiveMinutesRoutines.Views.Streatching"
+             Style="{StaticResource background}">
+
+
+
+    
+    <StackLayout>
+
+         <Image RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+                        RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}"
+                        Source="calm.jpg" VerticalOptions="FillAndExpand" Aspect="AspectFill"
+                AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1"/>
+     
+          <Grid AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1" BackgroundColor="Transparent" >
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="500"/>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        
+             
+    <forms:AnimationView 
+	x:Name="animationView" 
+	Grid.Row="0"
+    Grid.ColumnSpan="2"
+	Animation="jump.json" 
+	Loop="True" 
+	AutoPlay="True"
+	
+	
+	VerticalOptions="FillAndExpand" 
+	HorizontalOptions="FillAndExpand" />
+
+
+        <Button Grid.Row="2" Grid.Column="1" Text="Start!" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" Style="{StaticResource second}"/>
+
+        <Button Grid.Row="2" Grid.Column="0" Text="5:00" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" Style="{StaticResource second}"/>
+
+
+
+
+    </Grid>
+
+        </StackLayout>
+
+
+
+
+
   
 </ContentPage>

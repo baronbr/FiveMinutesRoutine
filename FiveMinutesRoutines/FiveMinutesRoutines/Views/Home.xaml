@@ -1,8 +1,68 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="http://prismlibrary.com"
              prism:ViewModelLocator.AutowireViewModel="True"
-             x:Class="FiveMinutesRoutines.Views.Home">
+             x:Class="FiveMinutesRoutines.Views.Home"
+            Style="{StaticResource background}"
+            >
+
+
+      <ContentPage>
+
   
-</ContentPage>
+        <StackLayout Padding="20">
+
+            <Grid Padding="20" RowSpacing="100" ColumnSpacing="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="100"/>
+                   
+                </Grid.ColumnDefinitions>
+            </Grid>
+
+
+       <Button Text = "Stretching"
+               Command="{Binding NavigateCommand}"
+           CommandParameter="Stretching"
+               Grid.Row="1" Grid.Column="0"
+        Style="{StaticResource first}" />
+
+       <Button Text = "Breathing" Grid.Row="1" Grid.Column="1"
+               Command="{Binding NavigateCommand}"
+               CommandParameter="Breathing"
+        Style="{StaticResource first}" />
+
+       <Button Text = "Water" Grid.Row="2" Grid.Column="1"
+               Command="{Binding NavigateCommand}"
+               CommandParameter="Water"
+        Style="{StaticResource first}" />
+
+
+
+        </StackLayout>
+
+
+
+    </ContentPage>
+
+    
+
+
+
+
+
+
+
+
+
+
+  
+</TabbedPage>

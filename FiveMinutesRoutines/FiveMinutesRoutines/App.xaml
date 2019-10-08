@@ -5,7 +5,33 @@
              x:Class="FiveMinutesRoutines.App">
 	<Application.Resources>
 
-		<!-- Application resource dictionary -->
+	     <ResourceDictionary>
+            <Style x:Key="third" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="#eee"/>
+                <Setter Property="TextColor" Value="Black" />
+                 <Setter Property="HeightRequest" Value="200"/>
+                <Setter Property="BorderRadius" Value="0"/>
+                <Setter Property="FontSize" Value="40" />
+            </Style>
+            <Style x:Key="second" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="#4C8577"/>
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="BorderRadius" Value="30"/>
+                <Setter Property="FontSize" Value="40" />
+            </Style>
+            <Style x:Key="first" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="#4C8577"/>
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="BorderRadius" Value="50"/>
+                <Setter Property="HeightRequest" Value="200"/>
+                <Setter Property="FontSize" Value="40" />
+            </Style>
+            <Style x:Key="background" TargetType="StackLayout">
+                <Setter Property="BackgroundColor" Value="#3396BA"/>
+                
+            </Style>
+              
+        </ResourceDictionary>
 
 	</Application.Resources>
 </prism:PrismApplication>

@@ -3,6 +3,44 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="http://prismlibrary.com"
              prism:ViewModelLocator.AutowireViewModel="True"
-             x:Class="FiveMinutesRoutines.Views.Login">
-  
+             x:Class="FiveMinutesRoutines.Views.Login"
+              Style="{StaticResource background}">
+
+     <StackLayout  Padding=" 30,150 " VerticalOptions="StartAndExpand" >
+
+           
+
+     
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    
+                </Grid.ColumnDefinitions>
+
+            </Grid >
+
+            <Label Grid.Row="0" Text="Username" TextColor="#34D37C"/>
+
+			<Entry Grid.Row="0" x:Name="usernameEntry" Placeholder="" />
+
+            <Label Grid.Row="1" Text="Password" TextColor="#34D37C" />
+
+			<Entry Grid.Row="1" x:Name="passwordEntry" IsPassword="true" />
+
+			<Button Grid.Row="2" Text="Login" Command="{Binding NavigateCommand}"
+           Style="{StaticResource second}"/>
+
+			<Label x:Name="messageLabel" />
+
+		</StackLayout>
+
+        
+
+
 </ContentPage>

@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+    <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+           
+             
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
+             x:Class="FiveMinutesRoutines.Views.Streatching"
+             xmlns:prism="http://prismlibrary.com"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             xmlns:gauge="clr-namespace:Syncfusion.SfGauge.XForms;assembly=Syncfusion.SfGauge.XForms"
+             xmlns:gradient ="clr-namespace:Syncfusion.XForms.Graphics;assembly=Syncfusion.Core.XForms"
+             xmlns:button="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+              xmlns:controls="clr-namespace:Xamd.ImageCarousel.Forms.Plugin.Abstractions;assembly=Xamd.ImageCarousel.Forms.Plugin.Abstractions"
+                 xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+                 xmlns:syncfusion="clr-namespace:Syncfusion.SfRotator.XForms;assembly=Syncfusion.SfRotator.XForms"
+             
+             
+
+             Title="{Binding Title}"
+             Style="{StaticResource  background}">
+    
+    <StackLayout>
+
+        <StackLayout>
+
+       
+
+         <syncfusion:SfRotator x:Name="rotator" 
+                        NavigationDelay="10000" 
+                        ItemsSource="{Binding ImageCollection}" 
+                        SelectedIndex="2"
+                        NavigationDirection="Horizontal"
+                        NavigationStripMode="Thumbnail" 
+                        BackgroundColor="#0C7FFB"
+                        EnableAutoPlay="true"
+                        EnableLooping="true"
+                        NavigationStripPosition="Bottom">
+            <syncfusion:SfRotator.ItemTemplate>
+                <DataTemplate>
+                    <Image  Source="{Binding Image}"/>
+                </DataTemplate>
+            </syncfusion:SfRotator.ItemTemplate>
+           
+        </syncfusion:SfRotator>
+
+     
+        </StackLayout>
+
+          <StackLayout Margin="0,0,0,0">
+            
+
+  <Label Text="00:00" x:Name="_timePicker" HorizontalOptions="Center"  VerticalTextAlignment="Center" FontSize="60"/>
+
+                   
+
+ <button:SfButton Text="Start!" CornerRadius="20"  HeightRequest="70" FontSize="50" Clicked="st_Clicked" x:Name="st"  >
+    <button:SfButton.BackgroundGradient>
+        <gradient:SfLinearGradientBrush>
+            <gradient:SfLinearGradientBrush.GradientStops>
+                <gradient:SfGradientStop Color="#2F9BDF" Offset="0"/>
+                <gradient:SfGradientStop Color="#51F1F2" Offset="1"/>
+            </gradient:SfLinearGradientBrush.GradientStops>
+        </gradient:SfLinearGradientBrush>
+    </button:SfButton.BackgroundGradient>
+</button:SfButton>
+
+
+        </StackLayout>
+
+
+
+
+        </StackLayout>
+  
+</ContentPage>

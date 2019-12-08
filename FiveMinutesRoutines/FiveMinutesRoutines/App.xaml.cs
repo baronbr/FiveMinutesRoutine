@@ -17,33 +17,47 @@ namespace FiveMinutesRoutines
 
 
         static SignUp_Data database;
-/*
-        public static SignUp_Data Database
+
+        public static string DatabaseLocation = string.Empty;
+
+    
+        public App(string databaseLocation)
+
         {
-            get
-            {
-                if (database == null)
-                {
-                    database = new SignUp_Data(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Notes.db3"));
-                }
-                return database;
-            }
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MTY3MDc0QDMxMzcyZTMzMmUzMGlmSzRCbVdGcS9abGRjNUpleUVmYUNmNExuUVc1NUJiS3ltMjQySXR3WW89");
+
+
+            InitializeComponent();
+
+            MainPage = new NavigationPage(new MainPage());
+
+            DatabaseLocation = databaseLocation;
         }
-        */
-
-
-
-
-
+      
         /* 
          * The Xamarin Forms XAML Previewer in Visual Studio uses System.Activator.CreateInstance.
          * This imposes a limitation in which the App class must have a default constructor. 
          * App(IPlatformInitializer initializer = null) cannot be handled by the Activator.
          */
-        public App() : this(null) { }
+        public App( ) : this(null) {  }
 
-        public App(IPlatformInitializer initializer ) : base(initializer) { }
+        public App(IPlatformInitializer initializer, string databaseLocation) : base(initializer) {
 
+
+
+            MainPage = new NavigationPage(new MainPage())
+            {
+
+                BarTextColor = Color.FromHex("90FFFF"),
+                BarBackgroundColor = Color.FromHex("0A09FA")
+           
+
+        };
+
+            DatabaseLocation = databaseLocation;
+        }
+
+    
         protected override  async void OnInitialized()
         {
             InitializeComponent();
@@ -57,12 +71,18 @@ namespace FiveMinutesRoutines
             containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
             containerRegistry.RegisterForNavigation<Home , HomeViewModel>();
 
-            containerRegistry.RegisterForNavigation<Breathing,BreathingViewModel>();
+            containerRegistry.RegisterForNavigation<breathHome,BreathingViewModel>();
+            containerRegistry.RegisterForNavigation<beginner, BreathingViewModel>();
+            containerRegistry.RegisterForNavigation<intermediate, BreathingViewModel>();
+            containerRegistry.RegisterForNavigation<expert, BreathingViewModel>();
+
             containerRegistry.RegisterForNavigation<Streatching, StreatchingViewModel>();
             containerRegistry.RegisterForNavigation<Water, WaterViewModel>();
             containerRegistry.RegisterForNavigation<Login, LoginViewModel>();
             containerRegistry.RegisterForNavigation<SignUp, SignUpViewModel>();
             containerRegistry.RegisterForNavigation<Settings, SettingsViewModel>();
+            containerRegistry.RegisterForNavigation<List>();
+
         }
         protected override void ConfigureViewModelLocator()
         {

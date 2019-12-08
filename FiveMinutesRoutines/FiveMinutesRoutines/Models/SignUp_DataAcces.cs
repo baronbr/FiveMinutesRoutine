@@ -27,10 +27,10 @@ namespace FiveMinutesRoutines.Models
                             .FirstOrDefaultAsync();
         }
 
-        /*
+        
         public Task<int> SaveNoteAsync(SignUp_Data note)
         {
-            if (SignUp_Data.ID != 0)
+            if (note.ID != 0)
             {
                 return _database.UpdateAsync(note);
             }
@@ -38,7 +38,7 @@ namespace FiveMinutesRoutines.Models
             {
                 return _database.InsertAsync(note);
             }
-        }*/
+        }
 
         public Task<int> DeleteNoteAsync(SignUp_Data note)
         {

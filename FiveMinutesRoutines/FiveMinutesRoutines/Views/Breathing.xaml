@@ -1,8 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:prism="http://prismlibrary.com" xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms" prism:ViewModelLocator.AutowireViewModel="True"
+             xmlns:prism="http://prismlibrary.com" xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="FiveMinutesRoutines.Views.Breathing"
+              xmlns:gauge="clr-namespace:Syncfusion.SfGauge.XForms;assembly=Syncfusion.SfGauge.XForms"
+             xmlns:gradient ="clr-namespace:Syncfusion.XForms.Graphics;assembly=Syncfusion.Core.XForms"
+             xmlns:button="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
              Style="{StaticResource background}">
 
     <StackLayout>
@@ -28,7 +33,7 @@
 
         
              
-    <forms:AnimationView 
+    <!--<forms:AnimationView 
 	x:Name="animationView" 
 	Grid.Row="0"
         Grid.ColumnSpan="2"
@@ -38,15 +43,33 @@
 	
 	
 	VerticalOptions="FillAndExpand" 
-	HorizontalOptions="FillAndExpand" />
+	HorizontalOptions="FillAndExpand" />-->
+              <ffimageloading:CachedImage
+                Source="giph.gif"
+                LoadingPlaceholder= "LoaderImage"/>
 
+                <Label Text="00:00" x:Name="_timePicker"  VerticalTextAlignment="Center" FontSize="60"/>
 
-        <Button Grid.Row="2" Grid.Column="1" Text="Start!" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" Style="{StaticResource second}"/>
-
-        <Button Grid.Row="2" Grid.Column="0" Text="5:00" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" Style="{StaticResource second}"/>
-
-
-
+              <button:SfButton Text="Start!" CornerRadius="20" CommandParameter="Login">
+    <button:SfButton.BackgroundGradient>
+        <gradient:SfLinearGradientBrush>
+            <gradient:SfLinearGradientBrush.GradientStops>
+                <gradient:SfGradientStop Color="#2F9BDF" Offset="0"/>
+                <gradient:SfGradientStop Color="#51F1F2" Offset="1"/>
+            </gradient:SfLinearGradientBrush.GradientStops>
+        </gradient:SfLinearGradientBrush>
+    </button:SfButton.BackgroundGradient>
+</button:SfButton>
+              <button:SfButton Text="Stop" CornerRadius="20"  CommandParameter="Login">
+    <button:SfButton.BackgroundGradient>
+        <gradient:SfLinearGradientBrush>
+            <gradient:SfLinearGradientBrush.GradientStops>
+                <gradient:SfGradientStop Color="#2F9BDF" Offset="0"/>
+                <gradient:SfGradientStop Color="#51F1F2" Offset="1"/>
+            </gradient:SfLinearGradientBrush.GradientStops>
+        </gradient:SfLinearGradientBrush>
+    </button:SfButton.BackgroundGradient>
+</button:SfButton>
 
     </Grid>
        

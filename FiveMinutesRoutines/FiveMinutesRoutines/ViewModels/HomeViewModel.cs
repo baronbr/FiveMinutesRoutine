@@ -33,7 +33,7 @@ namespace FiveMinutesRoutines.ViewModels
             switch (name)
             {
                 case "Breathing":
-                    await _navigationService.NavigateAsync("Breathing");
+                    await _navigationService.NavigateAsync("breathHome");
                     break;
                 case "Stretching":
                     await _navigationService.NavigateAsync("Streatching");

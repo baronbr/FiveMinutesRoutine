@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+              xmlns:gauge="clr-namespace:Syncfusion.SfGauge.XForms;assembly=Syncfusion.SfGauge.XForms"
+             xmlns:gradient ="clr-namespace:Syncfusion.XForms.Graphics;assembly=Syncfusion.Core.XForms"
+             xmlns:button="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+             x:Class="FiveMinutesRoutines.Views.breathHome"
+             Style="{StaticResource background}">
+    <ContentPage.Content>
+
+
+        <StackLayout VerticalOptions="Center">
+            
+           
+           
+
+
+               <button:SfButton x:Name="beginner" Command="{Binding NavigateCommand}" CornerRadius="20"  HeightRequest="120" FontSize="50" FontAttributes="Bold"
+               CommandParameter="Beginner" 
+                     Text="Beginner">
+    <button:SfButton.BackgroundGradient>
+        <gradient:SfLinearGradientBrush>
+            <gradient:SfLinearGradientBrush.GradientStops>
+                <gradient:SfGradientStop Color="Red" Offset="0"/>
+                <gradient:SfGradientStop Color="#51F1F2" Offset="1"/>
+            </gradient:SfLinearGradientBrush.GradientStops>
+        </gradient:SfLinearGradientBrush>
+    </button:SfButton.BackgroundGradient>
+</button:SfButton>
+              <button:SfButton x:Name="intermediate" Command="{Binding NavigateCommand}"
+                               CornerRadius="20"  HeightRequest="120" FontSize="50" FontAttributes="Bold"
+                               FontFamily=""
+               CommandParameter="Intermediate"
+                    Text="Intermediate" >
+    <button:SfButton.BackgroundGradient>
+        <gradient:SfLinearGradientBrush>
+            <gradient:SfLinearGradientBrush.GradientStops>
+                <gradient:SfGradientStop Color="Silver" Offset="0"/>
+                <gradient:SfGradientStop Color="#51F1F2" Offset="1"/>
+            </gradient:SfLinearGradientBrush.GradientStops>
+        </gradient:SfLinearGradientBrush>
+    </button:SfButton.BackgroundGradient>
+</button:SfButton>
+                 <button:SfButton Command="{Binding NavigateCommand}" CornerRadius="20"  HeightRequest="120" FontSize="50" FontAttributes="Bold"
+               CommandParameter="Expert"
+                    x:Name="expert" Text="Expert">
+    <button:SfButton.BackgroundGradient>
+        <gradient:SfLinearGradientBrush>
+            <gradient:SfLinearGradientBrush.GradientStops>
+                <gradient:SfGradientStop Color="Blue" Offset="0"/>
+                <gradient:SfGradientStop Color="#51F1F2" Offset="1"/>
+            </gradient:SfLinearGradientBrush.GradientStops>
+        </gradient:SfLinearGradientBrush>
+    </button:SfButton.BackgroundGradient>
+
+
+     </button:SfButton>
+     </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

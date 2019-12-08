@@ -1,46 +1,97 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:prism="http://prismlibrary.com"
-             prism:ViewModelLocator.AutowireViewModel="True"
-             x:Class="FiveMinutesRoutines.Views.Login"
+<CarouselPage xmlns="http://xamarin.com/schemas/2014/forms"
+
+              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              xmlns:prism="http://prismlibrary.com"
+             xmlns:gauge="clr-namespace:Syncfusion.SfGauge.XForms;assembly=Syncfusion.SfGauge.XForms"
+             xmlns:button="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+             
+             xmlns:gradient ="clr-namespace:Syncfusion.XForms.Graphics;assembly=Syncfusion.Core.XForms"
+              prism:ViewModelLocator.AutowireViewModel="True"
+              x:Class="FiveMinutesRoutines.Views.Login"
               Style="{StaticResource background}">
+    <ContentPage>
+        <ScrollView>
+            <StackLayout  Padding=" 30 " VerticalOptions="StartAndExpand">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                </Grid >
+ 
+                <Label Grid.Row="0" Text="name" TextColor="#34D37C" />
+ 
+                <Entry Grid.Row="0" x:Name="usernameEntry" Placeholder="" Text="{Binding FirstName}" />
+ 
+                <Label Grid.Row="1" Text="gender" TextColor="#34D37C" />
+ 
+                <Picker x:Name="picker" Title="Select Gender" TitleColor="Red">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>Male</x:String>
+                            <x:String>Female</x:String>
+                            <x:String>Other</x:String>
+ 
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+                <Label Grid.Row="0" Text="age" TextColor="#34D37C" />
+ 
+                <Entry Grid.Row="0" x:Name="ageEntry" Placeholder="" Text="{Binding LastName}" />
+                <Switch ThumbColor="AliceBlue" IsToggled="False" HorizontalOptions="Center" Toggled="OnToggled" />
+                <Label Grid.Row="3" Text= "Receive Notifications" HorizontalOptions="Center"/>
+ 
+                <Button Grid.Row="4" Text="Save" Command="{Binding SignIn}" Style="{StaticResource second}" />
+ 
+              
 
-     <StackLayout  Padding=" 30,150 " VerticalOptions="StartAndExpand" >
+                   <gauge:SfCircularGauge>
+   
+	    <gauge:SfCircularGauge.Headers>
+                <gauge:Header Text="Poor" Position="0.1,0.55" TextSize="20" ForegroundColor="#F03E3E" FontAttributes = "Bold"/>
+				<gauge:Header Text="Good" Position="0.87,0.55" TextSize="20" ForegroundColor="#27beb7" FontAttributes = "Bold"/>
+            </gauge:SfCircularGauge.Headers>
+			
+         <gauge:SfCircularGauge.Scales>
 
-           
+             <gauge:Scale  StartValue = "0" EndValue = "100" StartAngle = "180" SweepAngle = "180" Interval = "10"
+			                ShowLabels = "False" ShowTicks = "False" ShowRim = "False" RimThickness = "40" 
+							RadiusFactor = "0.9" RimColor = "#e0e0e0">	
+							
+                    <gauge:Scale.Pointers>
+                        <gauge:NeedlePointer  Value="70" KnobRadius="0" KnobStrokeColor = "#0682F6" KnobStrokeWidth = "6"
+                                    Color="OrangeRed" KnobColor="White" LengthFactor="0.66" Type="Triangle" Thickness = "10"/>
+                        </gauge:Scale.Pointers>   
+					  <gauge:Scale.Ranges>
+                        <gauge:Range StartValue = "0" EndValue = "35" Color = "#F03E3E" Thickness = "40" Offset = "0.9" />
+						<gauge:Range StartValue = "35" EndValue = "75" Color = "#FFDD00" Thickness = "40" Offset = "0.9" />
+						<gauge:Range StartValue = "75" EndValue = "100" Color = "#27beb7" Thickness = "40" Offset = "0.9" />
+                    </gauge:Scale.Ranges>
 
-     
+ 
+	          </gauge:Scale>
 
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    
-                </Grid.ColumnDefinitions>
-
-            </Grid >
-
-            <Label Grid.Row="0" Text="Username" TextColor="#34D37C"/>
-
-			<Entry Grid.Row="0" x:Name="usernameEntry" Placeholder="" />
-
-            <Label Grid.Row="1" Text="Password" TextColor="#34D37C" />
-
-			<Entry Grid.Row="1" x:Name="passwordEntry" IsPassword="true" />
-
-			<Button Grid.Row="2" Text="Login" Command="{Binding NavigateCommand}"
-           Style="{StaticResource second}"/>
-
-			<Label x:Name="messageLabel" />
-
-		</StackLayout>
-
-        
+         </gauge:SfCircularGauge.Scales>	
+		 
+   
+     </gauge:SfCircularGauge>
 
 
+
+ 
+            </StackLayout>
+ 
+  </ScrollView>
+    </ContentPage>
+ 
+    <ContentPage BackgroundColor="Blue">
+
+ 
 </ContentPage>
+</CarouselPage>
+ 

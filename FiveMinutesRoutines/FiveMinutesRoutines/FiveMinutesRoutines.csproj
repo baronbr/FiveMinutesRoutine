@@ -5,12 +5,24 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="4.2.0.815419" />
+    <PackageReference Include="Xamarin.Forms" Version="4.3.0.947036" />
     <PackageReference Include="Prism.Unity.Forms" Version="7.2.0.1367" />
-    <PackageReference Include="Com.Airbnb.Xamarin.Forms.Lottie" Version="3.0.1" />
+    <PackageReference Include="Com.Airbnb.Xamarin.Forms.Lottie" Version="3.0.3" />
     <PackageReference Include="sqlite-net-pcl" Version="1.6.292" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
+    <PackageReference Include="Syncfusion.Xamarin.Core" Version="17.3.0.26" />
+    <PackageReference Include="Syncfusion.Xamarin.SfGauge" Version="17.3.0.26" />
+    <PackageReference Include="Syncfusion.Xamarin.Buttons" Version="17.3.0.26" />
+    <PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.4.11.982" />
+    <PackageReference Include="Xamd.Plugins.Forms.ImageCarousel" Version="1.0.2" />
+    <PackageReference Include="Syncfusion.Xamarin.SfRotator" Version="17.3.0.26" />
+    <PackageReference Include="Xam.Plugins.Notifier" Version="3.0.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <EmbeddedResource Remove="Services\Iinfo.css" />
+    <EmbeddedResource Remove="Views\Streatching.xaml" />
+  </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Update="Views\Breathing.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
@@ -27,12 +39,6 @@
     <EmbeddedResource Update="Views\SignUp.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\Streatching.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Views\Water.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
   </ItemGroup>
 
   <ItemGroup>
@@ -42,5 +48,13 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
+    <Folder Include="Data\" />
+    <Folder Include="Converters\" />
+    <Folder Include="Business\" />
+    <Folder Include="Services\" />
+    <Folder Include="Tools\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="ViewModels\breathHomeViewModel.cs" />
   </ItemGroup>
 </Project>

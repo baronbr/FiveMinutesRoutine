@@ -1,16 +1,127 @@
-﻿
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+           
+             
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-              
+             xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
              x:Class="FiveMinutesRoutines.Views.MainPage"
-             xmlns:prism="http://prismlibrary.com" 
+             xmlns:prism="http://prismlibrary.com"
              prism:ViewModelLocator.AutowireViewModel="True"
-             Title="{Binding Title}">
+             xmlns:gauge="clr-namespace:Syncfusion.SfGauge.XForms;assembly=Syncfusion.SfGauge.XForms"
+             xmlns:gradient ="clr-namespace:Syncfusion.XForms.Graphics;assembly=Syncfusion.Core.XForms"
+             xmlns:button="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+            
+             
 
-    <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-        <Label Text="Welcome to Xamarin Forms and Prism!" />
-        <Button Text="hey" Command="{Binding AreaSelected}"/>
-    </StackLayout>
+             Title="{Binding Title}"
+             Style="{StaticResource  background}"
+           
+             >
+
+
+    <ContentPage.Content>
+        <ScrollView>
+
+            <StackLayout Margin="0,90,0,0">
+
+
+
+   <button:SfButton Text="Settings" CornerRadius="20" Command="{Binding AreaSelected}" CommandParameter="Login"
+                    HeightRequest="80" FontSize="60">
+    <button:SfButton.BackgroundGradient>
+        <gradient:SfLinearGradientBrush>
+            <gradient:SfLinearGradientBrush.GradientStops>
+                <gradient:SfGradientStop Color="#2F9BDF" Offset="0"/>
+                <gradient:SfGradientStop Color="#51F1F2" Offset="1"/>
+            </gradient:SfLinearGradientBrush.GradientStops>
+        </gradient:SfLinearGradientBrush>
+    </button:SfButton.BackgroundGradient>
+</button:SfButton>
+                
+
+
+
+
+
+                <StackLayout HeightRequest="300" WidthRequest="300" HorizontalOptions="Center">
+
+
+                <forms:AnimationView x:Name="animationView" Grid.Row="0" Grid.ColumnSpan="2"
+                                     Animation="ninja.json" Loop="True"
+                                     AutoPlay="True"
+                                     VerticalOptions="FillAndExpand"
+                                     HorizontalOptions="FillAndExpand" />
+
+                </StackLayout>
+
+
+                <StackLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    
+
+  <button:SfButton Text="Start" CornerRadius="20"    Command="{Binding AreaSelected}" HeightRequest="80" FontSize="60"
+                             CommandParameter="Home">
+    <button:SfButton.BackgroundGradient>
+        <gradient:SfLinearGradientBrush>
+            <gradient:SfLinearGradientBrush.GradientStops>
+                <gradient:SfGradientStop Color="#2F9BDF" Offset="0"/>
+                <gradient:SfGradientStop Color="#51F1F2" Offset="1"/>
+            </gradient:SfLinearGradientBrush.GradientStops>
+        </gradient:SfLinearGradientBrush>
+    </button:SfButton.BackgroundGradient>
+</button:SfButton>
+
+
+
+                </StackLayout>
+
+
+                <StackLayout/>
+
+
+
+
+        
+
+
+                
+
+    
+
+
+
+
+               
+                  
+                <StackLayout>
+   
+               
+
+  
+
+
+     
+     </StackLayout>
+
+        
+   </StackLayout>
+              
+
+          
+        </ScrollView>
+               
+    </ContentPage.Content>
 
 </ContentPage>
  

@@ -1,63 +1,68 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:prism="http://prismlibrary.com" xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms" prism:ViewModelLocator.AutowireViewModel="True"
+             xmlns:prism="http://prismlibrary.com"
+             xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="FiveMinutesRoutines.Views.Water"
-             Style="{StaticResource background}">
-
-    
-    
-    <StackLayout>
-
-         <Image RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
-                        RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}"
-                        Source="calm.jpg" VerticalOptions="FillAndExpand" Aspect="AspectFill"
-                AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1"/>
-     
-          <Grid AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1" BackgroundColor="Transparent" >
-
-        <Grid.RowDefinitions>
-            <RowDefinition Height="500"/>
-            <RowDefinition Height="*" />
-            <RowDefinition Height="*" />
-
-            <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
-        </Grid.ColumnDefinitions>
-
-        
+             xmlns:converters="using:FiveMinutesRoutines.Converters"
+          
+               xmlns:gauge="clr-namespace:Syncfusion.SfGauge.XForms;assembly=Syncfusion.SfGauge.XForms"
+             xmlns:button="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
              
-    <forms:AnimationView 
-	x:Name="animationView" 
-	Grid.Row="0"
-    Grid.ColumnSpan="2"
-	Animation="water.json" 
-	Loop="True" 
-	AutoPlay="True"
-	
-	
-	VerticalOptions="FillAndExpand" 
-	HorizontalOptions="FillAndExpand" />
+             xmlns:gradient ="clr-namespace:Syncfusion.XForms.Graphics;assembly=Syncfusion.Core.XForms"
+             
 
+             Style="{StaticResource background}">
+      <StackLayout Margin="0,80,0,0">
+        
 
-        <Button Grid.Row="2" Grid.ColumnSpan="2" Text="Start" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" Style="{StaticResource second}"/>
+<StackLayout Margin="0,30,0,0">
+ <gauge:SfCircularGauge>
+        <gauge:SfCircularGauge.Annotations>
+          
+             <gauge:GaugeAnnotation  ViewMargin="10,2">
+                <gauge:GaugeAnnotation.View>
+<Label x:Name="LiterText" Text="00 ml" TextColor="Black" FontSize="40"/>
+                      
+                </gauge:GaugeAnnotation.View>
+                
+            </gauge:GaugeAnnotation>
+        </gauge:SfCircularGauge.Annotations>
+        <gauge:SfCircularGauge.Scales>
+            <gauge:Scale  ShowLabels="False" ShowTicks="False" RimThickness="25" RadiusFactor="1" RimColor="#e0e0e0"
+                          StartAngle="90" SweepAngle="360" StartValue="0" EndValue="100" Interval="10">
+                <gauge:Scale.Pointers>
+                    <gauge:RangePointer x:Name="Pointer" Value="0" Offset="1" Thickness="30" RangeCap="Both" Color="#01bdae"/>
+                </gauge:Scale.Pointers>
+            </gauge:Scale>
+        </gauge:SfCircularGauge.Scales>
+</gauge:SfCircularGauge>
+ 
+  </StackLayout>
 
+    <button:SfButton Text="add" CornerRadius="20" x:Name="Add" Clicked="add_Clicked">
+    <button:SfButton.BackgroundGradient>
+        <gradient:SfRadialGradientBrush Radius="1.5">
+            <gradient:SfRadialGradientBrush.GradientStops>
+                <gradient:SfGradientStop Color="#FFB57B" Offset="0"/>
+                <gradient:SfGradientStop Color="#FF5361" Offset="1"/>
+            </gradient:SfRadialGradientBrush.GradientStops>
+        </gradient:SfRadialGradientBrush>
+    </button:SfButton.BackgroundGradient>
+</button:SfButton>
 
-
-
-
-    </Grid>
-
+  <button:SfSegmentedControl 
+        CornerRadius="20"
+        BorderColor="#2C7BBC"
+        SelectionTextColor="White"
+        Color="White"
+        FontColor="#3F3F3F"
+        VisibleSegmentsCount="5"
+        ItemsSource="{Binding SegmentItems}">
+        
+    </button:SfSegmentedControl>
+ 
         </StackLayout>
 
-
-
-
-
-
-
-  
 </ContentPage>

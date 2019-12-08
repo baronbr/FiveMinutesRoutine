@@ -1,16 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:prism="http://prismlibrary.com"
+             xmlns:prism="http://prismlibrary.com" xmlns:button="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms" xmlns:gradient="clr-namespace:Syncfusion.XForms.Graphics;assembly=Syncfusion.Core.XForms"
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="FiveMinutesRoutines.Views.Home"
             Style="{StaticResource background}"
             >
 
 
-      <ContentPage>
-
   
+
+  <ScrollView>
         <StackLayout Padding="20">
 
             <Grid Padding="20" RowSpacing="100" ColumnSpacing="10">
@@ -29,29 +29,61 @@
             </Grid>
 
 
-       <Button Text = "Stretching"
-               Command="{Binding NavigateCommand}"
-           CommandParameter="Stretching"
-               Grid.Row="1" Grid.Column="0"
-        Style="{StaticResource first}" />
+       
 
-       <Button Text = "Breathing" Grid.Row="1" Grid.Column="1"
-               Command="{Binding NavigateCommand}"
-               CommandParameter="Breathing"
-        Style="{StaticResource first}" />
 
-       <Button Text = "Water" Grid.Row="2" Grid.Column="1"
-               Command="{Binding NavigateCommand}"
-               CommandParameter="Water"
-        Style="{StaticResource first}" />
 
+
+
+
+       <button:SfButton Text = "Water" Grid.Row="2" Grid.Column="1"
+               Command="{Binding NavigateCommand}" FontSize="70"
+               CommandParameter="Water"  HeightRequest="180">
+    <button:SfButton.BackgroundGradient>
+        <gradient:SfLinearGradientBrush>
+            <gradient:SfLinearGradientBrush.GradientStops>
+                <gradient:SfGradientStop Color="#2F9BDF" Offset="0"/>
+                <gradient:SfGradientStop Color="#51F1F2" Offset="1"/>
+            </gradient:SfLinearGradientBrush.GradientStops>
+        </gradient:SfLinearGradientBrush>
+    </button:SfButton.BackgroundGradient>
+</button:SfButton>
+
+                <button:SfButton Text = "Breathing" Grid.Row="1" Grid.Column="1"
+               Command="{Binding NavigateCommand}" HeightRequest="180" FontSize="70"
+               CommandParameter="Breathing" >
+    <button:SfButton.BackgroundGradient>
+        <gradient:SfLinearGradientBrush>
+            <gradient:SfLinearGradientBrush.GradientStops>
+                <gradient:SfGradientStop Color="#2F9BDF" Offset="0"/>
+                <gradient:SfGradientStop Color="#51F1F2" Offset="1"/>
+            </gradient:SfLinearGradientBrush.GradientStops>
+        </gradient:SfLinearGradientBrush>
+    </button:SfButton.BackgroundGradient>
+</button:SfButton>
+                <button:SfButton Text = "Stretching"
+                                 HeightRequest="180"
+                                 FontSize="70"
+               Command="{Binding NavigateCommand}"
+               CommandParameter="Stretching"
+               Grid.Row="1" Grid.Column="0" >
+    <button:SfButton.BackgroundGradient>
+        <gradient:SfLinearGradientBrush>
+            <gradient:SfLinearGradientBrush.GradientStops>
+                <gradient:SfGradientStop Color="#2F9BDF" Offset="0"/>
+                <gradient:SfGradientStop Color="#51F1F2" Offset="1"/>
+            </gradient:SfLinearGradientBrush.GradientStops>
+        </gradient:SfLinearGradientBrush>
+    </button:SfButton.BackgroundGradient>
+</button:SfButton>
 
 
         </StackLayout>
 
+      </ScrollView>
 
 
-    </ContentPage>
+ </ContentPage>
 
     
 
@@ -65,4 +97,3 @@
 
 
   
-</TabbedPage>

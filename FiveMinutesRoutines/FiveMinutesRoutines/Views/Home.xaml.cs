@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace FiveMinutesRoutines.Views
 {
-    public partial class Home : TabbedPage
+    public partial class Home : ContentPage
     {
         public Home()
         {

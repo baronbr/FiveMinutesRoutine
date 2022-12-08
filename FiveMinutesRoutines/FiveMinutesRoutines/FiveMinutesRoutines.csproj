@@ -9,7 +9,7 @@
     <PackageReference Include="Prism.Unity.Forms" Version="7.2.0.1367" />
     <PackageReference Include="Com.Airbnb.Xamarin.Forms.Lottie" Version="3.0.3" />
     <PackageReference Include="sqlite-net-pcl" Version="1.6.292" />
-    <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
     <PackageReference Include="Syncfusion.Xamarin.Core" Version="17.3.0.26" />
     <PackageReference Include="Syncfusion.Xamarin.SfGauge" Version="17.3.0.26" />
     <PackageReference Include="Syncfusion.Xamarin.Buttons" Version="17.3.0.26" />
